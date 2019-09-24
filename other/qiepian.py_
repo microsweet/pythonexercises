@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+def trim(s):
+    if s[:1] == ' ':
+       # print(s[:1])
+       # print(s[1:0])
+       # print('-----------')
+        return trim(s[1:])
+    elif s[-1:] == ' ':
+       # print(s[-1:])
+       # print(s[0:-1])
+       # print('=========')
+        return trim(s[0:-1])
+    else:
+       # print('dd')
+        return s
+
+def test():
+    if trim('hello  ') != 'hello':
+        print('error')
+    elif trim('  hello') != 'hello':
+        print('error')
+    elif trim('  hello  ') != 'hello':
+        print('error')
+    elif trim('') != '':
+        print('error')
+    elif trim('   ') != '':
+        print('error')
+    else:
+        print('success')
+
+test()
