@@ -18,9 +18,13 @@
 | strip()  | 去掉首尾空白         |
 
 ### 数字
-str()方法转换字符串
 
-range()函数生成一系列数字（range(1,5)生成1、2、3、4，使用时可以指定步长range(2,11,2)生成10以内偶数）
+| 方法    | 作用                                                                      |
+|---------|---------------------------------------------------------------------------|
+| str()   | 方法转换字符串                                                            |
+| range() | 函数生成一系列数字（range(1,5)，可以指定步长range(2,11,2)生成10以内偶数） |
+| int()   | 将字符串转换为整数                                                        |
+| float() | 将字符串转换为浮点数                                                      |
 
 
 ### 列表
@@ -51,3 +55,36 @@ list(range(1,5))生成一个数字列表
 ### 字典
 python中字典是键—值对，如：apple={'color': 'red', 'shap': 'circle'}
 
+### 循环
+| 名称     | 简介                       |
+|----------|----------------------------|
+| for      | for value in list:         |
+| while    | while flag:                |
+| break    | 终止循环                   |
+| continue | 跳出本次循环继续执行下一次 |
+
+### 函数
+|   | 描述                                             |
+|---|--------------------------------------------------|
+| 1 | def funcname():                                  |
+| 2 | def funcname(value1,value2)                      |
+| 3 | def funcname(value1='str', value2)待默认值的形参 |
+
+```
+2. 传递参数时有两种方式：位置实参、关键字实参：</br>
+def funcname(value1, value2):
+    print(value1 + value2)
+
+funcname('1', '2') 结果为：12
+funcname(value2='2', value='1') 结果为：12
+```
+
+### 类
+* 创建一个类
+```
+class classname():
+    def __init__(self, var1, var2):
+        self.var1 = var1
+	self.var2 = var2
+	self.var3 = defaultVal
+```
