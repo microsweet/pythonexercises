@@ -170,3 +170,27 @@ part_1成功后执行的代码块放到part_3
 | FileNotFoundError | 文件未找到 |
 
 
+### 测试代码
+1. 测试函数
+```
+import unittest
+import need_func_name from need_test_class
+
+class test_class(unittest.TestCase):
+    def func_name(self):
+        var = need_func_name(var1)
+	self.assertEqual(var, 'xxxxx')
+```
+unittest Module中的断言方法
+
+| 方法                    | 用途                |
+|-------------------------|---------------------|
+| assertEqual(a, b)       | 核实 a == b         |
+| assertNotEqual(a, b)    | 核实 a != b         |
+| assertTrue(x)           | 核实 x为True        |
+| assertFalse(x)          | 核实 x为False       |
+| assertIn(item, list)    | 核实 item在list中   |
+| assertNotIn(item, list_ | 核实 item不在list中 |
+
+2. 测试类
+
