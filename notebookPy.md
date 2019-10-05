@@ -194,3 +194,15 @@ unittest Module中的断言方法
 
 2. 测试类
 
+
+### pygame
+|   | 函数                                            | 含义             |
+|---|-------------------------------------------------|------------------|
+| 1 | pygame.init()                                   | 初始化游戏       |
+| 2 | screen=pygame.display.set_mode((width, height)) | 创建屏幕显示窗口 |
+| 3 | pygame.display.set_caption                      | 设置屏幕对象标题 |
+| 4 | pygame.event.get()                              | 监视键盘鼠标事件 |
+| 5 | pygame.flip()                                   | 刷新屏幕         |
+| 6 | screen.fill(background_color)                   | 填充背景色       |
+| 7 | pygame.image.load(image_path)                   | 加载图像         |
+| 8 | image.get_rect()                                | 获取图像矩形     |
