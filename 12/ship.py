@@ -6,7 +6,7 @@ class Ship():
         self.screen = screen
 
         #读取飞船图片
-        self.image = pygame.image.load('/home/ms/pythonexercises/12/image/ship.bmp')
+        self.image = pygame.image.load('image/ship.bmp')
         #获取飞船图片矩形
         self.rect = self.image.get_rect()
         #获取屏幕矩形
@@ -32,7 +32,9 @@ class Ship():
 
     #指定位置绘制飞船
     def blitme(self):
-        self.screen.blit(self.image, self.rect);
+        #设置图片大小
+        image = pygame.transform.scale(self.image,(50, 50))
+        self.screen.blit(image, self.rect);
 
     #更新飞船位置属性
     def update(self):
