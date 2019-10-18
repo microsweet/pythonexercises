@@ -3,8 +3,8 @@ from pygame.sprite import Sprite
 
 class Star(Sprite):
     def __init__(self, screen):
-        super.__init__()
-        self.image = pygame.transform.scale(pygame.image.load(), (30, 30))
+        super().__init__()
+        self.image = pygame.transform.scale(pygame.image.load('../12/image/alien.bmp'), (30, 30))
         self.screen = screen
         self.rect = self.image.get_rect()
 
