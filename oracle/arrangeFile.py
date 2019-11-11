@@ -31,11 +31,13 @@ def query_data():
 
     #遍历任务rows
     for row in rows:
+        #通过每一条任务查询任务的feedback
         find_feedback(curs, row, conn)
 
     curs.close()
     conn.close()
 
+    #错误信息写入excel表格
     write_excel_xlsx('/home/microsweet/arrangeFile/errorExcel.xls', 'sheet1', errorRows)
     print('end')
 
@@ -47,6 +49,7 @@ def find_feedback(curs, taskRow, conn):
     rows = curs.fetchall()[:]
     #遍历feedback rows
     for row in rows:
+        #查询feedback关联的file
         find_files(curs, taskRow, row, conn)
 
 #通过feedbackId查询files
@@ -58,6 +61,7 @@ def find_files(curs, taskRow, feedbackRow, conn):
     rows = curs.fetchall()[:]
     #遍历file rows
     for row in rows:
+        #整理文件
         arrangeFile(taskRow, feedbackRow, row, conn, curs)
 
 #整理文件
@@ -70,14 +74,23 @@ def arrangeFile(taskRow, feedbackRow, fileRow, conn, curs):
                    + str(feedbackRow[1]) + '/' \
                    + fileTypeName
     sourceFilePath = fileRow[1].replace('D:/landtax/uploadFile/basicInfo/','/home/microsweet/arrangeFile/read/')
+    #查看是否有目标目录
     dirFlag = os.path.isdir(targetFilePath)
+    #查看是否有源文件
     fileFlag = os.path.isfile(sourceFilePath)
     try:
         if dirFlag==False and fileFlag==True:
+            #没有目标目录，有源文件时执行
+
+            #创建目标目录
             os.makedirs(targetPrefix + targetFilePath)
+            #复制源文件到目标目录
             copyfile(sourceFilePath, targetPrefix + targetFilePath+'/'+fileRow[2])
+            #更新file表
             #update_bs_file(curs, fileRow, targetFilePath, conn)
         elif dirFlag==True and fileFlag==True:
+            #有目标目录，有源文件时执行
+
             copyfile(sourceFilePath, targetPrefix + targetFilePath+'/'+fileRow[2])
             #update_bs_file(curs, fileRow, targetFilePath, conn)
     except FileNotFoundError:
