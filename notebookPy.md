@@ -206,3 +206,12 @@ unittest Module中的断言方法
 | 6 | screen.fill(background_color)                   | 填充背景色       |
 | 7 | pygame.image.load(image_path)                   | 加载图像         |
 | 8 | image.get_rect()                                | 获取图像矩形     |
+
+
+### python虚拟环境，coc补全生效
+
+```
+1、python -m venv .pyenv设置虚拟环境(默认路径：$HOME/["envs",".pyenv",".direnv"])
+2、在虚拟环境中安装：jedi、pylint
+3、在nvim中执行：CocCommand python.setInterpreter，选择$HOME/.pyenv
+```
