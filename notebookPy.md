@@ -215,3 +215,6 @@ unittest Module中的断言方法
 2、在虚拟环境中安装：jedi、pylint
 3、在nvim中执行：CocCommand python.setInterpreter，选择$HOME/.pyenv
 ```
+
+### django文档
+https://docs.djangoproject.com/zh-hans/2.2/intro/tutorial01/
