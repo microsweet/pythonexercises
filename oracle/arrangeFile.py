@@ -15,13 +15,13 @@ def query_data():
     os.environ['NSL_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
     #os.environ['NSL_LANG'] = 'AMERICAN_AMERICA.ZHS16GBK'
     #print(os.path)
-    oracle_tns = 'system/orcl@192.168.128.5:1521/orcl'
+    oracle_tns = 'system/orcl@192.168.128.3:1521/orcl'
     conn = cx_Oracle.connect(oracle_tns)
     curs = conn.cursor()
 
     sql = "SELECT t.TASK_ID, t.OPERATION_OBJ, p.payername, m.xzqmc " \
           "FROM GRID_BUSINESs.BS_TASK_P_TASKS t, " \
-          "GRID_SYSDB.BSS_TAXPAYERS_BAKE p, " \
+          "GRID_SYSDB.BSS_TAXPAYERS p, " \
           "grid_sysdb.county m " \
           "WHERE t.OPERATION_OBJ=p.djxh " \
           "AND t.TASK_ID IN (SELECT * FROM GRID_BUSINESS.ARRANGE_TASK) " \
