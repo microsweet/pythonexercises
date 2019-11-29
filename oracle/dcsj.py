@@ -48,7 +48,7 @@ def query_data():
     exportData.insert(0, title)
 
     exportPath = '/home/microsweet/workspace/work/地税/export/'
-    exportName = ''
+    exportName = '二院审核任务'
     write_excel_xlsx(exportPath+exportName+'.xlsx', exportName, exportData)
     print('end')
 
