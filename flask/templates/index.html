@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div>this is a template</div>
+        {{ url_str }} <br>
+        {#列表#}
+        {{ my_list }} <br>
+        {{ my_list.1 }} <br>
+        {{ my_list[2] }} <br>
+        {#字典#}
+        {{ my_dict }} <br>
+        {{ my_dict.name }} <br>
+        {{ my_dict['url'] }} <br>
+        {#控制代码块{%  %}#}
+        {#for循环#}
+        {% for num in my_list %}
+            {# 数据大于1显示，if判断 #}
+            {% if num > 1 %}
+                {{ num }} <br>
+            {% endif %}
+        {% endfor %}
+        {#过滤器#}
+        {{ url_str | upper}} <br>
+        {{ url_str | reverse}} <br>
+        {{ url_str | upper | reverse | lower}} <br>
+    </body>
+</html>

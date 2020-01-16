@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>books</title>
+</head>
+<body>
+    <form method="post" accept-charset="utf-8">
+        {{ form.csrf_token() }}
+        {{ form.author.label }}{{ form.author }}
+        {{ form.book.label }}{{ form.book }}
+        {{ form.submit }}
+        {# 显示消息闪现内容 #}
+        {% for message in get_flashed_messages() %}
+            {{ message }}
+        {% endfor %}
+    </form>
+    <hr>    
+    <ul>
+        {% for author in authors %}
+            <li>
+                {{ author.name }}
+                <a href="{{ url_for('delete_author', author_id=author.id) }}">
+                    删除
+                </a>
+            </li>
+            <ul>
+                {% for book in author.books %}
+                <li>{{ book.name }}
+                    <a href="{{ url_for('delete_book', book_id=book.id) }}">
+                        删除
+                    </a>
+                </li>
+                {% else %}
+                <li>无</li>
+                {% endfor%}
+            </ul>
+        {% endfor%}
+    </ul>
+</body>
+</html>

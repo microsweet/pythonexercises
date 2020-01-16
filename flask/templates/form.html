@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <form method="post">
+       {{ form.csrf_token() }}
+       {{ form.username.label }}{{ form.username }} <br>
+       {{ form.password.label }}{{ form.password }} <br>
+       {{ form.password2.label }}{{ form.password2 }} <br>
+       {{ form.submit }}
+        {% for message in get_flashed_messages() %}
+            {{ message }}
+        {% endfor %}
+   </form> 
+</body>
+</html>
