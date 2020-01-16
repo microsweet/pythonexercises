@@ -5,6 +5,5 @@ class Employee():
         self.last_name = last_name.title()
         self.salary = salary
 
-    def give_raise(self,salary=5000):
+    def give_raise(self, salary=5000):
         self.salary += salary
-

@@ -5,5 +5,5 @@ with open(filename, 'a') as file_object:
     while flag:
         reason = input('Why are you like program?')
         file_object.write(reason + '\n')
-        if(reason=='not'):
+        if (reason == 'not'):
             flag = False

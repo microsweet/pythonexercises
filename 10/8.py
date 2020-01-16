@@ -2,9 +2,11 @@
 fileCat = 'cat.txt'
 fileDog = 'dog.txt'
 
+
 def printName(names):
     for name in names:
         print(name.rstrip())
+
 
 try:
     with open(fileCat) as file_object:
@@ -16,4 +18,3 @@ except FileNotFound:
 else:
     printName(catNames)
     printName(dogNames)
-

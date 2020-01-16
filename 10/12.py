@@ -2,6 +2,8 @@
 import json
 
 filename = 'lovelynumber.json'
+
+
 def get_lovely_num():
     try:
         with open(filename) as f_obj:
@@ -11,10 +13,12 @@ def get_lovely_num():
     else:
         return lovely_num
 
+
 def set_lovely_num():
     lovely_num = input('please input your lovely number: ')
     with open(filename, 'w') as f_obj:
         json.dump(lovely_num, f_obj)
+
 
 def view():
     lovely_num = get_lovely_num()
@@ -22,5 +26,6 @@ def view():
         print(lovely_num)
     else:
         set_lovely_num()
+
 
 view()

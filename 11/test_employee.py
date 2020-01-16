@@ -2,6 +2,7 @@
 import unittest
 from employee import Employee
 
+
 class test_empolyee(unittest.TestCase):
     def setUp(self):
         self.employee = Employee('Tony', 'Stark', 10000)
@@ -13,5 +14,6 @@ class test_empolyee(unittest.TestCase):
     def test_give_custom_raise(self):
         self.employee.give_raise(1000)
         self.assertEqual(self.employee.salary, 11000)
+
 
 unittest.main()

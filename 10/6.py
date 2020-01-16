@@ -5,9 +5,9 @@ while flag:
     input_1 = input('请输入一个数字')
     input_2 = input('请在输入一个数字')
     try:
-        if input_1=='q':
+        if input_1 == 'q':
             flag = False
-        elif input_2=='q':
+        elif input_2 == 'q':
             flag = False
         input_1 = int(input_1)
         input_2 = int(input_2)

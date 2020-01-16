@@ -5,36 +5,39 @@ from settings import Settings
 from ship import Ship
 import game_function as gf
 
+
 def run_game():
-    
-    #初始化游戏
+
+    # 初始化游戏
     pygame.init()
-    #游戏设置类
+    # 游戏设置类
     ai_settings = Settings()
-    #设置游戏屏幕大小
-    screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
+    # 设置游戏屏幕大小
+    screen = pygame.display.set_mode(
+        (ai_settings.screen_width, ai_settings.screen_height))
     pygame.display.set_caption("Alien Invasion")
-    #初始化飞船类
+    # 初始化飞船类
     ship = Ship(ai_settings, screen)
 
-    #创建存储子弹编组
+    # 创建存储子弹编组
     bullets = Group()
-    #创建外星人编组
+    # 创建外星人编组
     aliens = Group()
 
-    #创建外星人群
+    # 创建外星人群
     gf.create_fleet(ai_settings, screen, ship, aliens)
 
-    #游戏主循环
+    # 游戏主循环
     while True:
-        #监听鼠标键盘方法
+        # 监听鼠标键盘方法
         gf.check_event(ship, ai_settings, screen, bullets)
-        #更新飞船位置
+        # 更新飞船位置
         ship.update()
-        #更新子弹位置
+        # 更新子弹位置
         gf.update_bullets(bullets)
-        #刷新屏幕
+        # 刷新屏幕
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
         time.sleep(0.005)
+
 
 run_game()

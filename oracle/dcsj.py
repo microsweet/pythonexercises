@@ -4,7 +4,6 @@ import os
 import openpyxl
 
 
-
 def write_excel_xlsx(path, sheet_name, value):
     index = len(value)
     workbook = openpyxl.Workbook()
@@ -12,16 +11,19 @@ def write_excel_xlsx(path, sheet_name, value):
     sheet.title = sheet_name
     for i in range(0, index):
         for j in range(0, len(value[i])):
-            sheet.cell(row=i+1, column=j+1, value=str(value[i][j]))
+            cellValue = ''
+            if value[i][j] is not None:
+                cellValue = str(value[i][j])
+            sheet.cell(row=i + 1, column=j + 1, value=cellValue)
     workbook.save(path)
     print("xlsx格式表格写入数据成功！")
- 
- 
+
+
 def query_data():
     os.environ['NSL_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
     #os.environ['NSL_LANG'] = 'AMERICAN_AMERICA.ZHS16GBK'
 
-    oracle_tns = 'system/orcl@192.168.128.3:1521/orcl'
+    oracle_tns = 'system/orcl@192.168.128.251:1521/orcl'
     conn = cx_Oracle.connect(oracle_tns)
     curs = conn.cursor()
 
@@ -48,8 +50,9 @@ def query_data():
     exportData.insert(0, title)
 
     exportPath = '/home/microsweet/workspace/work/地税/export/'
-    exportName = '二院审核任务'
-    write_excel_xlsx(exportPath+exportName+'.xlsx', exportName, exportData)
+    exportName = '关联关系'
+    write_excel_xlsx(exportPath + exportName + '.xlsx', exportName, exportData)
     print('end')
+
 
 query_data()

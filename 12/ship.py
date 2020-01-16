@@ -1,13 +1,15 @@
 #飞船类
 import pygame
 
+
 class Ship():
     def __init__(self, ai_settings, screen):
         self.screen = screen
 
         #读取飞船图片
         #self.image = pygame.image.load('image/ship.bmp')
-        self.image = pygame.transform.scale(pygame.image.load('image/ship.bmp'), (50, 50))
+        self.image = pygame.transform.scale(
+            pygame.image.load('image/ship.bmp'), (50, 50))
         #获取飞船图片矩形
         self.rect = self.image.get_rect()
         #获取屏幕矩形
@@ -35,19 +37,18 @@ class Ship():
     def blitme(self):
         #设置图片大小
         #image = pygame.transform.scale(self.image,(50, 50))
-        self.screen.blit(self.image, self.rect);
+        self.screen.blit(self.image, self.rect)
 
     #更新飞船位置属性
     def update(self):
-        if self.move_right and self.rect.right<self.screen_rect.right:
+        if self.move_right and self.rect.right < self.screen_rect.right:
             self.centerx += self.speed
-        if self.move_left and self.rect.left>self.screen_rect.left:
+        if self.move_left and self.rect.left > self.screen_rect.left:
             self.centerx -= self.speed
-        if self.move_top and self.rect.top>self.screen_rect.top:
+        if self.move_top and self.rect.top > self.screen_rect.top:
             self.centery -= self.speed
-        if self.move_bottom and self.rect.bottom<self.screen_rect.bottom:
+        if self.move_bottom and self.rect.bottom < self.screen_rect.bottom:
             self.centery += self.speed
 
         self.rect.centerx = self.centerx
         self.rect.centery = self.centery
-
