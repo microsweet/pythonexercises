@@ -11,6 +11,7 @@ class Restaurant():
     def open_restaurant(self):
         print('restaurant is open')
 
+
 restaurant = Restaurant('kfc', 'quickly')
 restaurant.describe_restaurant()
 restaurant.open_restaurant()

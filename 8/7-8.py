@@ -1,7 +1,7 @@
 sandwich_orders = ['a', 'b', 'c']
 finished_sandwiches = []
 i = 3
-while i>0:
+while i > 0:
     sandwich = sandwich_orders.pop()
     print('I made your ' + sandwich + ' sandwich')
     finished_sandwiches.append(sandwich)

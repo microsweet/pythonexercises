@@ -9,13 +9,15 @@ class User():
         print(self.first_name.title() + ' ' + self.last_name.title())
 
     def greet_user(self):
-        print('hello ' + self.first_name.title() + ' ' + self.last_name.title())
+        print('hello ' + self.first_name.title() + ' ' +
+              self.last_name.title())
 
     def increment_login_attempts(self):
         self.login_attempts = self.login_attempts + 1
 
     def reset_login_attempts(self):
         self.login_attempts = 0
+
 
 tony = User('Tony', 'Start')
 tony.increment_login_attempts()

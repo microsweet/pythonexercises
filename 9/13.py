@@ -9,6 +9,3 @@ language['3'] = 'c'
 
 for a, b in language.items():
     print(a + ' ' + b)
-
-
-

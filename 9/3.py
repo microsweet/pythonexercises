@@ -8,7 +8,9 @@ class User():
         print(self.first_name.title() + ' ' + self.last_name.title())
 
     def greet_user(self):
-        print('hello ' + self.first_name.title() + ' ' + self.last_name.title())
+        print('hello ' + self.first_name.title() + ' ' +
+              self.last_name.title())
+
 
 tony = User('Tony', 'Start')
 peter = User('Peter', 'Park')

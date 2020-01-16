@@ -8,8 +8,9 @@ def normalize(name):
             flag = False
         else:
             a = word.lower()
-        b = b+a
+        b = b + a
     return b
+
 
 L1 = ['adam', 'LISA', 'barT']
 L2 = list(map(normalize, L1))

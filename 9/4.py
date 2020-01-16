@@ -14,14 +14,14 @@ class Restaurant():
 
     def set_number_served(self, number_served):
         self.number_served = number_served
-    
+
     def increment_number_served(self, may_served):
         self.number_served = self.number_served
         self.may_served = may_served
+
 
 restaurant = Restaurant('kfc', 'quickly')
 print(restaurant.number_served)
 restaurant.set_number_served(10)
 print(restaurant.number_served)
 restaurant.increment_number_served(100)
-

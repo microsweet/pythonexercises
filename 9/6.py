@@ -11,6 +11,7 @@ class Restaurant():
     def open_restaurant(self):
         print('restaurant is open')
 
+
 class Icecreamstand(Restaurant):
     def __init__(self, restaurant_name, cuisine_type):
         super().__init__(restaurant_name, cuisine_type)
@@ -20,6 +21,6 @@ class Icecreamstand(Restaurant):
         for i in self.flavors:
             print(i)
 
+
 icecreamstand = Icecreamstand('Haagen-Dazs', 'quickly')
 icecreamstand.showFlavors()
-

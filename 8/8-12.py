@@ -4,4 +4,5 @@ def sandwich(*xx):
         food += d
     print(food)
 
-sandwich('a','b','c')
+
+sandwich('a', 'b', 'c')

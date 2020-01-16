@@ -10,6 +10,7 @@ class Restaurant():
     def open_restaurant(self):
         print("is open")
 
+
 ss = Restaurant('jhon', 'cn')
 ss.describe_restaurant()
 ss.open_restaurant()
